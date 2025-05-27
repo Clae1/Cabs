@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+        <title>CabsOnline</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<script type="text/javascript" src="booking.js"></script> 
+        <link rel="stylesheet" href="booking.css" type="text/css">
+	</head>
+
+	<body>
+		<h1>CabsOnline &nbsp;</h1>
+        <div>
+            <form>
+                <p><label>Customer Name:  <input type="text" name="cname" id="cname"> </label></p>
+                <p><label>Phone number:  <input type="text" name="phone" id="phone"> </label></p>
+                <p><label>Unit Number:  <input type="text" name="unumber" id="unumber"> </label></p>
+                <p><label>Street Number:  <input type="text" name="snumber" id="snumber"> </label></p>
+                <p><label>Street Name:  <input type="text" name="stname" id="stname"> </label></p>
+                <p><label>Suburb:  <input type="text" name="sbname" id="sbname"> </label></p>
+                <p><label>Destination Suburb:  <input type="text" name="dsbname" id="dsbname"> </label></p>
+                <p><label>Pick-Up Date:  <input type="date" name="date" id="date"> </label></p>
+                <p><label>Pick-up Time:  <input type="time" name="time" id="time"> </label></p>
+                
+                <input name="submit" type = "button" 
+                onClick = "getData('booking.php','targetDiv', 
+                            cname.value, 
+                            phone.value,
+                            unumber.value,
+                            snumber.value,
+                            stname.value,
+                            sbname.value,
+                            dsbname.value,
+                            date.value,
+                            time.value) " value = "Submit">
+            </form>
+        </div>
+        
+        <div id="targetDiv"> 
+            <p>The fetched data will go here.</p>  
+        </div> 
+	</body>
+</html>

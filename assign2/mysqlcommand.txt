@@ -1,0 +1,17 @@
+$query1 = "CREATE TABLE `cabs` (
+                                `bnumber` VARCHAR(8) NOT NULL, 
+                                `cname` VARCHAR(50) NOT NULL,
+                                `phone` VARCHAR(12) NOT NULL,
+                                `unumber` VARCHAR(50),
+                                `snumber` VARCHAR(50) NOT NULL,
+                                `stname` VARCHAR(200) NOT NULL,
+                                `sbname` VARCHAR(200),
+                                `dsbname` VARCHAR(200),
+                                `date` DATE NOT NULL,
+                                `time` TIME NOT NULL,
+                                `status` VARCHAR(20),
+                                PRIMARY KEY(`bnumber`)
+                            );";
+
+$query = "INSERT INTO statusPost (bnumber, cname, phone, unumber, snumber, stname, sbname, dsbname, date, time, status) 
+                        VALUES ('BRN00001','$cname','$phone','$unumber','$snumber','$stname','$sbname','$dsbname','$date','$time','Unassigned')";
