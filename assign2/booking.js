@@ -1,17 +1,48 @@
 // file simpleajax.js
 
 //Troubleshooting:
-// One of the issues that I was dealing with was that the JS code was not 
-// Communicating properly with data.php. This is because I did not make a proper
-// POST request. I was using the GET method instead of POST. 
-
-// Another issue was the body of the request, the string within in the body had 
-// a ? mark in it which was not needed. I must remember that the body must be 
-// a specific format.
-
-// Lastly, we can use the developer tools in the browser to see the network activity.
+// Use the developer tools in the browser to see the network activity.
 // This will help us see if the request is being sent and if the response is being
 // received.
+
+
+//To run all the functions when page loads 
+function loadFunction(divID, divID_2)
+{
+    showDate(divID);
+    showTime(divID_2);
+}
+
+
+//function will get date and place information into date value input 
+function showDate(divID)
+{   
+    //This functions will get the current date, month and year 
+    //Both month and date function must be converted into String as it returns a number
+    const now = new Date(); 
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, '0'); 
+    const day = String(now.getDate()).padStart(2, '0'); 
+    const formattedDate = `${year}-${month}-${day}`;
+
+    const input = document.getElementById(divID);
+    input.value = formattedDate;  
+}
+
+//function will get hours and minutes, then place information into time value input 
+function showTime(divID_2)
+{
+    console.log(divID_2);
+
+    const now = new Date(); 
+    const hour = String(now.getHours()).padStart(2, '0');
+    const min = String(now.getMinutes()).padStart(2, '0');
+    const formatTime = `${hour}:${min}`;
+    
+    const input = document.getElementById(divID_2);
+    input.value = formatTime;
+}
+
 
 function getData(dataSource, divID, cname, phone, unumber, snumber, stname, sbname, dsbname, date, time)  
 {
@@ -67,8 +98,7 @@ function getData(dataSource, divID, cname, phone, unumber, snumber, stname, sbna
         alert("Field Date cannot be empty, must input a date!!!");
         return; 
     }
-
-    if (validateTime(time))
+    if (validateDate(time))
     {
         alert("Field Time cannot be empty, must input a date!!!");
         return; 
@@ -102,6 +132,7 @@ function getData(dataSource, divID, cname, phone, unumber, snumber, stname, sbna
 	);
 }
 
+
 function validateCname(input) {
     return /^[a-zA-Z ]+$/.test(input);
 }
@@ -134,7 +165,5 @@ function validateDate(input) {
     return /^$/.test(input);
 }
 
-function validateTime(input) {
-    return /^$/.test(input);
-}
+
 

@@ -1,5 +1,16 @@
 <!--file data.php -->
 <?php
+    //Create a class for functions 
+    class Booking {
+        function formatDate($input){
+            $array = explode("-", $input);
+            $newDate = $array[0]. "/" . $array[1] . "/" . $array[2];
+            return $newDate;
+        }
+    }
+
+
+
 	// sql info or use include 'file.inc'
     require_once('../../files/setting.php');
             
@@ -21,9 +32,6 @@
 
 	else 
 	{
-        //debugging 
-        //var_dump($_POST);
-
         $cname = $_POST['cname'];
         $phone = $_POST['phone'];
         $unumber = $_POST['unumber'];
@@ -39,21 +47,14 @@
         $query = "SELECT bnumber FROM cabs ORDER BY bnumber DESC LIMIT 1";
         $result = mysqli_query($conn, $query);
 
-        $id_num;
         $id = "BRN"; 
-        $counter = 1;
         if ($result && mysqli_num_rows($result) > 0)
         {
             $row = mysqli_fetch_assoc($result); 
-            $id_num = $row["bnumber"]; 
-            $id_num = substr($id_num, 3);
-            $position = strrpos($id_num, "0"); 
-
-            $counter += substr($id_num, $position);
-            $id_num = substr_replace($id_num, "$counter", $position);
-
-            $bnumber = $id.$id_num; 
-
+            $lastest_bnumber = $row["bnumber"]; 
+            $id_num = intval(substr($lastest_bnumber, 3));
+            $id_num++;
+            $bnumber = $id . str_pad($id_num, 5, "0", STR_PAD_LEFT);
         }
 
         //If there are not results in the table, set the booking reference to "BRN00000"
@@ -63,14 +64,25 @@
         }
 
         $query = "INSERT INTO cabs (bnumber, cname, phone, unumber, snumber, stname, sbname, dsbname, date, time, status) VALUES ('$bnumber','$cname','$phone','$unumber','$snumber','$stname','$sbname','$dsbname','$date','$time','Unassigned')";
-        // executes the query
         $result = mysqli_query($conn, $query);
 
-        //check if query worked 
+        //check if query did not work worked 
         if (!$result)
         {
             echo "<br>";
             echo "SQL Error: " . mysqli_error($conn);
+        }
+
+        else {
+            echo "<h1>Thank you for Booking</h1>";
+            echo "<br>";
+            echo "<p>Booking reference number :". $bnumber ."<p>";
+            echo "<p>Pickup time :". $time ."<p>";
+
+            //Change the format of date 
+            $input = new Booking();
+            $date = $input->formatDate($date);
+            echo "<p>Pickup date :". $date ."<p>";
         }
 	}
 ?>

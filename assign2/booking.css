@@ -60,7 +60,7 @@ input[type="button"]:hover {
     background-color: #005fa3;
 }
 
-#targetDiv {
+#reference {
     margin-top: 24px;
     padding: 16px;
     background: #e9f5ff;
