@@ -10,7 +10,7 @@
 	<body onload="loadFunction('date', 'time')">
 		<h1>CabsOnline &nbsp;</h1>
         <div>
-            <form>
+            <form id = "form">
                 <p><label>Customer Name:  <input type="text" name="cname" id="cname"></label></p>
                 <p><label>Phone number:  <input type="text" name="phone" id="phone"> </label></p>
                 <p><label>Unit Number:  <input type="text" name="unumber" id="unumber"> </label></p>
@@ -22,7 +22,7 @@
                 <p><label>Pick-up Time:  <input type="time" name="time" id="time" value="time"> </label></p>
                 
                 <input name="submit" type = "button" 
-                onClick = "getData('booking.php','reference', 
+                onClick = "getData('booking.php','reference',
                             cname.value, 
                             phone.value,
                             unumber.value,
@@ -36,7 +36,7 @@
         </div>
         
         <div id="reference"> 
-            <p>The fetched data will go here.</p>  
+            <p>Awaiting Booking Response</p>  
         </div> 
 	</body>
 </html>

@@ -9,6 +9,17 @@
 //To run all the functions when page loads 
 function loadFunction(divID, divID_2)
 {
+    //Reset the field 
+    document.getElementById('cname').value = '';
+    document.getElementById('phone').value = '';
+    document.getElementById('unumber').value = '';
+    document.getElementById('snumber').value = '';
+    document.getElementById('stname').value = '';
+    document.getElementById('sbname').value = '';
+    document.getElementById('dsbname').value = '';
+    document.getElementById('date').value = '';
+    document.getElementById('time').value = '';
+
     showDate(divID);
     showTime(divID_2);
 }
@@ -32,8 +43,6 @@ function showDate(divID)
 //function will get hours and minutes, then place information into time value input 
 function showTime(divID_2)
 {
-    console.log(divID_2);
-
     const now = new Date(); 
     const hour = String(now.getHours()).padStart(2, '0');
     const min = String(now.getMinutes()).padStart(2, '0');
@@ -44,7 +53,7 @@ function showTime(divID_2)
 }
 
 
-function getData(dataSource, divID, cname, phone, unumber, snumber, stname, sbname, dsbname, date, time)  
+function getData(dataSource, divID ,cname, phone, unumber, snumber, stname, sbname, dsbname, date, time)  
 {
 	var place = document.getElementById(divID);
 	
@@ -125,8 +134,13 @@ function getData(dataSource, divID, cname, phone, unumber, snumber, stname, sbna
 	});
 	requestPromise.then(
 		function (response){
+            document.getElementById("form").reset();
 			response.text().then(function(text) {
 				place.innerHTML = text;
+
+                //Will only reset the form, date and time when
+                //the user clicks on the button 
+                loadFunction('date', 'time');
 			});
 		}
 	);

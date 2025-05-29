@@ -1,0 +1,87 @@
+/* Basic Body and Font Styles */
+body {
+    font-family: Arial, sans-serif; /* Common, readable font */
+    margin: 20px; /* Add some space around the content */
+    background-color: #f4f4f4; /* Light grey background for a softer look */
+    color: #333; /* Dark grey text for readability */
+    line-height: 1.6; /* Improve line spacing */
+}
+
+/* Header Styling */
+h1 {
+    color: #0056b3; 
+    text-align: center; 
+    margin-bottom: 30px; 
+    padding-bottom: 10px;
+    border-bottom: 2px solid #ddd;
+}
+
+/* Form Container Styling */
+div {
+    background-color: #fff; 
+    padding: 25px; 
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    max-width: 500px; 
+    margin: 20px auto; 
+}
+
+/* Form Element Spacing */
+form p {
+    margin-bottom: 15px; 
+}
+
+/* Label and Input Styling */
+label {
+    display: block; 
+    margin-bottom: 8px; 
+    font-weight: bold;
+}
+
+input[type="text"] {
+    width: calc(100% - 20px); 
+    padding: 10px;
+    margin-top: 5px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    box-sizing: border-box; 
+    font-size: 16px; 
+}
+
+/* Button Styling */
+input[type="button"] {
+    background-color: #007bff; 
+    color: white; 
+    padding: 12px 20px; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    font-size: 16px; 
+    transition: background-color 0.3s ease; 
+    width: 100%; 
+    box-sizing: border-box;
+}
+
+input[type="button"]:hover {
+    background-color: #0056b3; 
+}
+
+/* Response Area Styling */
+#reference {
+    text-align: center; 
+    font-style: italic; 
+    color: #666;
+    padding: 20px;
+    margin-top: 20px; 
+    border: 1px dashed #ccc; 
+    border-radius: 8px;
+    background-color: #fff;
+    max-width: 500px; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#reference p {
+    margin: 0; 
+    padding: 0;
+}
