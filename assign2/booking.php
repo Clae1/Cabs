@@ -9,8 +9,6 @@
         }
     }
 
-
-
 	// sql info or use include 'file.inc'
     require_once('../../files/setting.php');
             
@@ -73,7 +71,8 @@
             echo "SQL Error: " . mysqli_error($conn);
         }
 
-        else {
+        else 
+        {
             echo "<h1>Thank you for Booking</h1>";
             echo "<br>";
             echo "<p>Booking reference number :". $bnumber ."<p>";
@@ -84,5 +83,9 @@
             $date = $input->formatDate($date);
             echo "<p>Pickup date :". $date ."<p>";
         }
+        // Frees up the memory, after using the result pointer
+        mysqli_free_result($result);
 	}
+    // close the database connection
+    mysqli_close($conn);
 ?>

@@ -20,6 +20,7 @@ function loadFunction(divID, divID_2)
     document.getElementById('date').value = '';
     document.getElementById('time').value = '';
 
+    //Will reset the date and time on the form 
     showDate(divID);
     showTime(divID_2);
 }
