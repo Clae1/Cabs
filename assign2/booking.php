@@ -7,6 +7,38 @@
             $newDate = $array[0]. "/" . $array[1] . "/" . $array[2];
             return $newDate;
         }
+
+        function checkDatabase($conn)
+        {
+            //Check if the table exist first before running the other queries 
+            $query = "SHOW TABLES LIKE 'cabs'";
+            $result = mysqli_query($conn, $query);
+
+            if (mysqli_num_rows($result) == 0)
+            {
+                $query = "CREATE TABLE `cabs` (
+                                `bnumber` VARCHAR(8) NOT NULL, 
+                                `cname` VARCHAR(50) NOT NULL,
+                                `phone` VARCHAR(12) NOT NULL,
+                                `unumber` VARCHAR(50),
+                                `snumber` VARCHAR(50) NOT NULL,
+                                `stname` VARCHAR(200) NOT NULL,
+                                `sbname` VARCHAR(200),
+                                `dsbname` VARCHAR(200),
+                                `date` DATE NOT NULL,
+                                `time` TIME NOT NULL,
+                                `status` VARCHAR(20),
+                                PRIMARY KEY(`bnumber`)
+                            );";
+                $result = mysqli_query($conn, $query);
+
+                if (!$result)
+                {
+                    echo "<br>";
+                    echo "SQL Error: " . mysqli_error($conn);
+                }
+            }
+        }
     }
 
 	// sql info or use include 'file.inc'
@@ -30,6 +62,10 @@
 
 	else 
 	{
+        //Check if the database exist, if not ceate database
+        $create = new Booking();
+        $create->checkDatabase($conn);
+        
         $cname = $_POST['cname'];
         $phone = $_POST['phone'];
         $unumber = $_POST['unumber'];

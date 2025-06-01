@@ -9,15 +9,18 @@
 
 	<body>
 		<h1>CabsOnline Admin Dashboard &nbsp;</h1>
+        <div><input name="delete" type="button" onClick="deleteTable('admin.php', 'reference')" value="Delete Database" ></div>
         <div>
-            <form id = "form">
+            <form id="form">
                 <p><label>Enter Booking Reference Number<input type="text" name="bsearch" id="bsearch"></label></p>
                 <input name="sbutton" type="button" onClick="getData('admin.php', 'reference', bsearch.value)" value="Enter Booking Reference" >
             </form>
         </div>
         
-        <div id="reference"> 
-            <p>Awaiting Response</p>  
-        </div> 
+        <div class="content">
+            <div id="reference"> 
+                <p>Awaiting Response</p>  
+            </div> 
+        </div>
 	</body>
 </html>

@@ -26,10 +26,10 @@ function showTime2()
 	return formatTime2;
 }
 
-function updateData(dataSource, divID, assign)
+function deleteTable(dataSource, divID, action)
 {
 	var place = document.getElementById(divID);
-	console.log(assign);
+	var action = "delete";
 
 	//Making a POST request using fetch
 	const requestPromise = fetch(dataSource, {
@@ -40,12 +40,41 @@ function updateData(dataSource, divID, assign)
 		},
 		//Set the body of the request
 		//The body must be in the format of key=value&key=value
-		body:   "bsearch="+encodeURIComponent(assign)
+		body:   "action="+encodeURIComponent(action)
 	});
 	requestPromise.then(
 		function (response){
 			response.text().then(function(text) {
-				place.innerHTML = text;
+				place.innerHTML = text; 
+			});
+		}
+	);
+}
+
+function updateData(dataSource, divID, bnumber)
+{
+	var place = document.getElementById(divID);
+	var update = "update";
+
+	console.log("updataData: " + bnumber);
+	console.log(update);
+
+	//Making a POST request using fetch
+	const requestPromise = fetch(dataSource, {
+		//Set the method to POST
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/x-www-form-urlencoded'
+		},
+		//Set the body of the request
+		//The body must be in the format of key=value&key=value
+		body:   "bnumber="+encodeURIComponent(bnumber)+
+				"&update="+encodeURIComponent(update)
+	});
+	requestPromise.then(
+		function (response){
+			response.text().then(function(text) {
+				place.innerHTML = text; 
 			});
 		}
 	);

@@ -15,3 +15,9 @@ $query1 = "CREATE TABLE `cabs` (
 
 $query = "INSERT INTO statusPost (bnumber, cname, phone, unumber, snumber, stname, sbname, dsbname, date, time, status) 
                         VALUES ('BRN00001','$cname','$phone','$unumber','$snumber','$stname','$sbname','$dsbname','$date','$time','Unassigned')";
+
+$query = "UPDATE cabs SET status = 'Assigned' WHERE bnumber = '$bnumber'";
+
+$query = "SELECT * FROM cabs WHERE bnumber = '$bsearch'";
+
+$query = "DROP TABLE cabs";

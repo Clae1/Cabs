@@ -66,6 +66,13 @@ input[type="button"]:hover {
     background-color: #0056b3; 
 }
 
+
+/* For class content */
+.content {
+    margin: auto;
+    max-width: 1200px;
+}
+
 /* Response Area Styling */
 #reference {
    background-color: #fff;
