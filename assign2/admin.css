@@ -1,22 +1,52 @@
-/* Basic Body and Font Styles */
+/*Claeone Villareal ID:22170897 */
+
+/* This is CSS for the HTML Document*/
 body {
-    font-family: Arial, sans-serif; 
+    background-image: url('images/taxi_2.jpg');
+    background-size: cover;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     margin: 20px; 
-    background-color: #f4f4f4; 
     color: #333; 
     line-height: 1.6; 
 }
 
-/* Header Styling */
+/* This is for information at the top of the webpage */
+.admin-header 
+{
+    background-color: #27AE60; 
+    margin: auto;
+    max-width: 1200px;
+    margin-bottom: 10px;
+
+    border-style: solid; 
+
+}
+
+.navTable {
+    margin: auto;
+}
+
+.title 
+{
+    margin: auto;
+}
+
+.deleteButton
+{
+    margin: auto;
+    max-width: 200px;
+}
+
+/* general styling for heading 1*/
 h1 {
-    color: #0056b3; 
+    color: #2C3E50; 
     text-align: center; 
     margin-bottom: 30px; 
     padding-bottom: 10px;
     border-bottom: 2px solid #ddd;
 }
 
-/* Form Container Styling */
+/* general styling for dividers */
 div {
     background-color: #fff; 
     padding: 25px; 
@@ -26,12 +56,15 @@ div {
     margin: 20px auto; 
 }
 
-/* Form Element Spacing */
+/* This is css for the form */
+#form1 {
+    background-color: #ECF0F1;
+}
 form p {
     margin-bottom: 15px; 
 }
 
-/* Label and Input Styling */
+/* styling for the buttons on the html document*/
 label {
     display: block; 
     margin-bottom: 8px; 
@@ -48,10 +81,10 @@ input[type="text"] {
     font-size: 16px; 
 }
 
-/* Button Styling */
+/* Styling any buttons on the html document */
 input[type="button"] {
-    background-color: #007bff; 
-    color: white; 
+    background-color: #F39C12; 
+    color: #2C3E50; 
     padding: 12px 20px; 
     border: none; 
     border-radius: 5px; 
@@ -63,41 +96,46 @@ input[type="button"] {
 }
 
 input[type="button"]:hover {
-    background-color: #0056b3; 
+    background-color: #cdb203; 
 }
 
 
-/* For class content */
+/* CSS code that encapsulates reference or any responses from the server-side */
 .content {
     margin: auto;
     max-width: 1200px;
+    background-color: #27AE60; 
+    border-style: solid;
 }
 
-/* Response Area Styling */
+/* CSS code to style the responses from the server-side */
 #reference {
-   background-color: #fff;
+    background-color: #fff;
     padding: 25px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin: auto;
     width: 100%;
-    max-width: 900px; /* or whatever max width you want */
-    overflow-x: auto; /* enables horizontal scroll if content is too wide */
+    max-width: 1200px;
+    overflow-x: auto; 
     box-sizing: border-box;
 }
 
-/* for the table */ 
+/* CSS for the table 'info' class sent from server side */ 
 .info table {
     width: 100%;
     min-width: 600px; /* or as needed */
     border-collapse: collapse;
+    table-layout: fixed; 
 }
 
 .info th,
 .info td {
+  width: 12.5%;
   padding: 12px 15px;
   text-align: left;
   border-bottom: 1px solid #eee;
+  word-wrap: normal;
 }
 
 .info th {
@@ -107,12 +145,8 @@ input[type="button"]:hover {
   text-transform: uppercase;
 }
 
-.info tr:nth-child(even) {
-  background-color: #f6f6f6;
-}
-
 .info tr:hover {
-  background-color: #eef;
+  background-color: #F39C12;
 }
 
 .info input[type="button"] {

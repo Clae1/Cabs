@@ -1,10 +1,6 @@
+//Claeone Villareal ID:22170897
+
 // file simpleajax.js
-
-//Troubleshooting:
-// Use the developer tools in the browser to see the network activity.
-// This will help us see if the request is being sent and if the response is being
-// received.
-
 //function will get hours and minutes, then place information into time value input 
 function showTime1()
 {
@@ -16,6 +12,8 @@ function showTime1()
 	return formatTime1;
 }
 
+//function will get hours and minute, then place information into time value input 
+//However, add + 2 to the hours to incease the 'hours2'. 
 function showTime2()
 {
     const now2 = new Date(); 
@@ -26,6 +24,9 @@ function showTime2()
 	return formatTime2;
 }
 
+//Function is similar to getData in which we send a body of information to 
+//the server-side ("admin.php"). We are sending 'delete' string via a variable 
+//in the body to be used on the server-side
 function deleteTable(dataSource, divID, action)
 {
 	var place = document.getElementById(divID);
@@ -51,13 +52,14 @@ function deleteTable(dataSource, divID, action)
 	);
 }
 
+//Function is similar to getData in which we send a body of information to 
+//the server-side ("admin.php"). This function is called from 'assign' button
+//which will send a specific booking reference to the server-side to update 
+//a row on the table 
 function updateData(dataSource, divID, bnumber)
 {
 	var place = document.getElementById(divID);
 	var update = "update";
-
-	console.log("updataData: " + bnumber);
-	console.log(update);
 
 	//Making a POST request using fetch
 	const requestPromise = fetch(dataSource, {
@@ -80,19 +82,20 @@ function updateData(dataSource, divID, bnumber)
 	);
 }
 
+//Function gets the information from the HTML form and puts the information into
+//a body and sends its to the server-side to be used. 
 function getData(dataSource, divID , bsearch)  
 {
 	var place = document.getElementById(divID);
+
+	//Get the current time and time two hours from the current time 
 	var time1 = showTime1(); 
 	var time2 = showTime2(); 
-	console.log(time1); 
-	console.log(time2);
-	console.log(bsearch);
 	
     // check Bsearch is in the correct format, if inputted data is written on field
 	// and if the field is not empty. To allow the admin to submit empty fields. 
     if (!validateBsearch(bsearch) && !emptyCheck(bsearch)) {
-        alert("Field must contain only \"BRN\" followed by a maximum 5 numbers ");
+        alert("Field must contain only \"BRN\" followed by a maximum length of five numbers ");
         return;
     }
 
@@ -118,10 +121,13 @@ function getData(dataSource, divID , bsearch)
 	);
 }
 
+//Valdiation check for searching for Booking Reference, and will check if the 
+//the field has 'BRN' as its first letters followed by a sequence of five numbers 
 function validateBsearch(input) {
     return /^BRN[0-9]{5}$/.test(input);
 }
 
+//Valdiation check for checking if the Admin submitted an empty field
 function emptyCheck(input) {
     return /^$/.test(input);
 }

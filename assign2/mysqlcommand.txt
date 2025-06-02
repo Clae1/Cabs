@@ -1,4 +1,6 @@
-$query1 = "CREATE TABLE `cabs` (
+Claeone Villareal ID:22170897
+
+$query = "CREATE TABLE `cabs` (
                                 `bnumber` VARCHAR(8) NOT NULL, 
                                 `cname` VARCHAR(50) NOT NULL,
                                 `phone` VARCHAR(12) NOT NULL,
@@ -21,3 +23,11 @@ $query = "UPDATE cabs SET status = 'Assigned' WHERE bnumber = '$bnumber'";
 $query = "SELECT * FROM cabs WHERE bnumber = '$bsearch'";
 
 $query = "DROP TABLE cabs";
+
+$query = "SELECT bnumber FROM cabs ORDER BY bnumber DESC LIMIT 1";
+
+$query = "SHOW TABLES LIKE 'cabs'";
+
+$query = "SELECT * FROM cabs WHERE bnumber = '$bnumber'";
+
+$query = "SELECT * FROM cabs WHERE bnumber = '$bsearch'";

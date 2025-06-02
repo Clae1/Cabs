@@ -1,26 +1,38 @@
-/* General body styling */
+/*Claeone Villareal ID:22170897*/
+
+
+/*General styling for the html document*/
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f6f8fa;
-    margin: 0;
-    padding: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: #ECF0F1;
+    background-image: url(images/taxi_2.jpg);
+    background-size: cover;
+    color: #2C3E50;
 }
 
+/*To style the title or heading 1 of the webpage*/
 h1 {
-    background-color: #0074d9;
-    color: #fff;
-    padding: 20px;
-    margin: 0 0 20px 0;
+    color: #2C3E50;
     text-align: center;
+    border-bottom: 2px solid #ddd;
 }
 
+/*Genereal styling of the div tags */
 div {
+    background-color: #27AE60;
     max-width: 500px;
-    margin: 30px auto;
-    background: #fff;
+    margin: 10px auto;
+    border-style: solid;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     padding: 24px;
+
+}
+
+/*General styling of the form */
+form {
+    background-color: #ECF0F1;
+    padding: 12px;
 }
 
 form p {
@@ -32,39 +44,76 @@ label {
     justify-content: space-between;
     align-items: center;
     font-weight: bold;
+    color: #2C3E50;
 }
 
+/*Styling for the div tag that will hold the response from the server */
+#reference {
+    margin-top: 24px;
+    padding: 24px;
+    background: #27AE60;
+    border-radius: 8px;
+    min-height: 40px;
+    font-size: 1.1em;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/*Styling for a specific paragraph tag*/
+.wait {
+    background-color: #ECF0F1;
+    padding: 12px;
+    border-radius: 10px;
+}
+
+/*Styling for a div tag that will hold the confirmation message after clicking submit*/
+.info {
+    background-color: #ECF0F1;
+    padding: 12px;
+    border-radius: 10px;
+}
+
+/*Styling for paragraph tags within the confirmation message */
+.serverData 
+{
+    background-color: #F39C12;
+    padding: 5px;
+}
+
+/*Styling for the heading 1 tag at the top of the page */
+.title 
+{
+    margin: auto;
+}
+
+/*This is to help stlye fields on the form*/
 input[type="text"],
 input[type="date"],
 input[type="time"] {
-    padding: 6px 8px;
+    padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
     width: 60%;
     font-size: 1em;
+    background-color: #ECF0F1;
+    color: #2C3E50;
 }
 
+/*To style the buttons on the form*/
 input[type="button"] {
-    background-color: #0074d9;
-    color: #fff;
+    background-color: #F39C12;
+    color: #2C3E50;
     border: none;
-    border-radius: 4px;
-    padding: 10px 24px;
+    border-radius: 5px;
+    padding: 12px 24px;
     font-size: 1em;
     cursor: pointer;
     margin-top: 16px;
-    transition: background 0.2s;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 input[type="button"]:hover {
-    background-color: #005fa3;
-}
-
-#reference {
-    margin-top: 24px;
-    padding: 16px;
-    background: #e9f5ff;
-    border-radius: 6px;
-    min-height: 40px;
-    font-size: 1.1em;
+    background-color: #cdb203;
+    color: #2C3E50;
 }
